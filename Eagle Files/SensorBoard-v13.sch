@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.5.0">
+<eagle version="7.0.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -63,6 +63,9 @@
 <layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
 <layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
 <layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
+<layer number="57" name="tCAD" color="7" fill="1" visible="no" active="no"/>
+<layer number="59" name="tCarbon" color="7" fill="1" visible="no" active="no"/>
+<layer number="60" name="bCarbon" color="7" fill="1" visible="no" active="no"/>
 <layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
 <layer number="93" name="Pins" color="2" fill="1" visible="no" active="yes"/>
@@ -71,6 +74,7 @@
 <layer number="96" name="Values" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="97" name="Info" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="98" name="Guide" color="6" fill="1" visible="yes" active="yes"/>
+<layer number="99" name="SpiceOrder" color="7" fill="1" visible="no" active="no"/>
 <layer number="100" name="Muster" color="7" fill="1" visible="no" active="no"/>
 <layer number="101" name="Patch_Top" color="12" fill="4" visible="no" active="yes"/>
 <layer number="102" name="Vscore" color="7" fill="1" visible="no" active="yes"/>
@@ -79,12 +83,32 @@
 <layer number="105" name="tPlate" color="7" fill="1" visible="no" active="yes"/>
 <layer number="106" name="bPlate" color="7" fill="1" visible="no" active="yes"/>
 <layer number="107" name="Crop" color="7" fill="1" visible="no" active="yes"/>
+<layer number="108" name="fp8" color="7" fill="1" visible="no" active="yes"/>
+<layer number="109" name="fp9" color="7" fill="1" visible="no" active="yes"/>
+<layer number="110" name="fp0" color="7" fill="1" visible="no" active="yes"/>
+<layer number="111" name="LPC17xx" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="112" name="tSilk" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="113" name="IDFDebug" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="116" name="Patch_BOT" color="9" fill="4" visible="no" active="yes"/>
 <layer number="121" name="_tsilk" color="7" fill="1" visible="no" active="yes"/>
 <layer number="122" name="_bsilk" color="7" fill="1" visible="no" active="yes"/>
+<layer number="123" name="tTestmark" color="7" fill="1" visible="no" active="yes"/>
+<layer number="124" name="bTestmark" color="7" fill="1" visible="no" active="yes"/>
 <layer number="125" name="_tNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="126" name="_bNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="127" name="_tValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="128" name="_bValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="129" name="Mask" color="7" fill="1" visible="no" active="yes"/>
+<layer number="131" name="tAdjust" color="7" fill="1" visible="no" active="yes"/>
+<layer number="132" name="bAdjust" color="7" fill="1" visible="no" active="yes"/>
 <layer number="144" name="Drill_legend" color="7" fill="1" visible="no" active="yes"/>
+<layer number="150" name="Notes" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="151" name="HeatSink" color="7" fill="1" visible="no" active="yes"/>
+<layer number="152" name="_bDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="153" name="FabDoc1" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="154" name="FabDoc2" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="155" name="FabDoc3" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="199" name="Contour" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="200" name="200bmp" color="1" fill="10" visible="no" active="yes"/>
 <layer number="201" name="201bmp" color="2" fill="10" visible="no" active="yes"/>
 <layer number="202" name="202bmp" color="3" fill="10" visible="no" active="yes"/>
@@ -110,70 +134,14 @@
 <layer number="222" name="222bmp" color="23" fill="1" visible="no" active="no"/>
 <layer number="223" name="223bmp" color="24" fill="1" visible="no" active="no"/>
 <layer number="224" name="224bmp" color="25" fill="1" visible="no" active="no"/>
+<layer number="248" name="Housing" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="249" name="Edge" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="250" name="Descript" color="3" fill="1" visible="no" active="no"/>
 <layer number="251" name="SMDround" color="12" fill="11" visible="no" active="no"/>
 <layer number="254" name="cooling" color="7" fill="1" visible="no" active="yes"/>
 </layers>
 <schematic xreflabel="%F%N/%S.%C%R" xrefpart="1_/%S.%C%R">
 <libraries>
-<library name="1_SparkFun-Sensors">
-<description>&lt;h3&gt;SparkFun Electronics' preferred foot prints&lt;/h3&gt;
-In this library you'll find sensors- accelerometers, gyros, compasses, magnetometers, light sensors, imagers, temp sensors, etc.&lt;br&gt;&lt;br&gt;
-We've spent an enormous amount of time creating and checking these footprints and parts, but it is the end user's responsibility to ensure correctness and suitablity for a given componet or application. If you enjoy using this library, please buy one of our products at www.sparkfun.com.
-&lt;br&gt;&lt;br&gt;
-&lt;b&gt;Licensing:&lt;/b&gt; CC v3.0 Share-Alike You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
-<packages>
-<package name="MQ-3">
-<description>MQ-3 in Configuration B</description>
-<circle x="0" y="0" radius="8.4" width="0.1" layer="21"/>
-<pad name="HA" x="-4.75" y="0" drill="1.016"/>
-<pad name="HB" x="4.75" y="0" drill="1.016"/>
-<pad name="A1" x="-3.35" y="3.35" drill="1.016"/>
-<pad name="A2" x="-3.35" y="-3.35" drill="1.016"/>
-<pad name="B2" x="3.35" y="-3.35" drill="1.016"/>
-<pad name="B1" x="3.35" y="3.35" drill="1.016"/>
-<hole x="0" y="0" drill="3"/>
-</package>
-</packages>
-<symbols>
-<symbol name="MQ-4">
-<description>MQ-4 Methane gas sensor</description>
-<pin name="A1" x="-12.7" y="5.08" length="middle"/>
-<pin name="HB" x="15.24" y="0" length="middle" rot="R180"/>
-<pin name="A2" x="-12.7" y="-5.08" length="middle"/>
-<pin name="B1" x="12.7" y="5.08" length="middle" rot="R180"/>
-<pin name="HA" x="-15.24" y="0" length="middle"/>
-<pin name="B2" x="12.7" y="-5.08" length="middle" rot="R180"/>
-<circle x="0" y="0" radius="10.77630625" width="0.254" layer="94"/>
-<text x="-7.62" y="15.24" size="1.778" layer="95">&gt;NAME</text>
-<text x="-7.62" y="12.7" size="1.778" layer="96">&gt;VALUE</text>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="METHANE_SENSOR" prefix="U">
-<description>MQ-4 Methane Gas Sensor&lt;br&gt;
-SEN-09404</description>
-<gates>
-<gate name="G$1" symbol="MQ-4" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="MQ-3">
-<connects>
-<connect gate="G$1" pin="A1" pad="A1"/>
-<connect gate="G$1" pin="A2" pad="A2"/>
-<connect gate="G$1" pin="B1" pad="B1"/>
-<connect gate="G$1" pin="B2" pad="B2"/>
-<connect gate="G$1" pin="HA" pad="HA"/>
-<connect gate="G$1" pin="HB" pad="HB"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="1_SparkFun-Passives">
 <description>&lt;h3&gt;SparkFun Electronics' preferred foot prints&lt;/h3&gt;
 In this library you'll find resistors, capacitors, inductors, test points, jumper pads, etc.&lt;br&gt;&lt;br&gt;
@@ -12334,6 +12302,51 @@ This is the standard Spark Fun Electronics PCB logo.</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="Qtechknow">
+<packages>
+<package name="GAS_SENSOR">
+<pad name="2" x="-4.75" y="0" drill="1.2"/>
+<pad name="5" x="4.75" y="0" drill="1.2"/>
+<pad name="1" x="-3.35" y="3.35" drill="1.2"/>
+<pad name="3" x="-3.35" y="-3.35" drill="1.2"/>
+<pad name="6" x="3.35" y="-3.35" drill="1.2"/>
+<pad name="4" x="3.35" y="3.35" drill="1.2"/>
+</package>
+</packages>
+<symbols>
+<symbol name="GAS-SENSORV2">
+<pin name="A1" x="-12.7" y="5.08" length="middle"/>
+<pin name="HB" x="15.24" y="0" length="middle" rot="R180"/>
+<pin name="A2" x="-12.7" y="-5.08" length="middle"/>
+<pin name="B1" x="12.7" y="5.08" length="middle" rot="R180"/>
+<pin name="HA" x="-15.24" y="0" length="middle"/>
+<pin name="B2" x="12.7" y="-5.08" length="middle" rot="R180"/>
+<circle x="0" y="0" radius="10.77630625" width="0.254" layer="94"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="GAS-SENSORNEW">
+<gates>
+<gate name="G$1" symbol="GAS-SENSORV2" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="GAS_SENSOR">
+<connects>
+<connect gate="G$1" pin="A1" pad="1"/>
+<connect gate="G$1" pin="A2" pad="3"/>
+<connect gate="G$1" pin="B1" pad="4"/>
+<connect gate="G$1" pin="B2" pad="6"/>
+<connect gate="G$1" pin="HA" pad="2"/>
+<connect gate="G$1" pin="HB" pad="5"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -12344,8 +12357,7 @@ This is the standard Spark Fun Electronics PCB logo.</description>
 </class>
 </classes>
 <parts>
-<part name="U2" library="1_SparkFun-Sensors" deviceset="METHANE_SENSOR" device=""/>
-<part name="1_R1" library="1_SparkFun-Passives" deviceset="RESISTOR" device="AXIAL-0.3"/>
+<part name="R8" library="1_SparkFun-Passives" deviceset="RESISTOR" device="AXIAL-0.3"/>
 <part name="JP8" library="1_SparkFun-Connectors" deviceset="M01" device="PTH" value=""/>
 <part name="JP16" library="1_SparkFun-Connectors" deviceset="M04" device="PTH"/>
 <part name="JP1" library="2_1_SFE Connectors" deviceset="M01" device="PTH"/>
@@ -12384,6 +12396,7 @@ This is the standard Spark Fun Electronics PCB logo.</description>
 <part name="LOGO6" library="SparkFun-Aesthetics" deviceset="LOGO-SFE" device="SK"/>
 <part name="LOGO7" library="SparkFun-Aesthetics" deviceset="LOGO-SFE" device="SK"/>
 <part name="LOGO8" library="SparkFun-Aesthetics" deviceset="LOGO-SFE" device="SK"/>
+<part name="U$1" library="Qtechknow" deviceset="GAS-SENSORNEW" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -12400,8 +12413,7 @@ This is the standard Spark Fun Electronics PCB logo.</description>
 <text x="-103.632" y="27.178" size="3.81" layer="94">Quin at Qtechknow.com</text>
 </plain>
 <instances>
-<instance part="U2" gate="G$1" x="-58.42" y="127"/>
-<instance part="1_R1" gate="G$1" x="-73.66" y="114.3" rot="R270"/>
+<instance part="R8" gate="G$1" x="-73.66" y="114.3" rot="R270"/>
 <instance part="JP8" gate="G$1" x="-96.52" y="132.08"/>
 <instance part="JP16" gate="G$1" x="-93.98" y="109.22" rot="MR180"/>
 <instance part="JP1" gate="G$1" x="-241.3" y="185.42" rot="R270"/>
@@ -12441,6 +12453,7 @@ This is the standard Spark Fun Electronics PCB logo.</description>
 <instance part="LOGO6" gate="G$1" x="-5.08" y="38.1"/>
 <instance part="LOGO7" gate="G$1" x="-5.08" y="30.48"/>
 <instance part="LOGO8" gate="G$1" x="-5.08" y="22.86"/>
+<instance part="U$1" gate="G$1" x="-58.42" y="127"/>
 </instances>
 <busses>
 </busses>
@@ -12448,8 +12461,8 @@ This is the standard Spark Fun Electronics PCB logo.</description>
 <net name="1_N$1" class="0">
 <segment>
 <pinref part="JP8" gate="G$1" pin="1"/>
-<pinref part="U2" gate="G$1" pin="A1"/>
 <wire x1="-88.9" y1="132.08" x2="-71.12" y2="132.08" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="A1"/>
 </segment>
 </net>
 <net name="1_N$2" class="0">
@@ -12457,16 +12470,16 @@ This is the standard Spark Fun Electronics PCB logo.</description>
 <pinref part="JP16" gate="G$1" pin="4"/>
 <wire x1="-88.9" y1="104.14" x2="-40.64" y2="104.14" width="0.1524" layer="91"/>
 <wire x1="-40.64" y1="104.14" x2="-40.64" y2="121.92" width="0.1524" layer="91"/>
-<pinref part="U2" gate="G$1" pin="B1"/>
 <wire x1="-40.64" y1="121.92" x2="-40.64" y2="127" width="0.1524" layer="91"/>
 <wire x1="-40.64" y1="127" x2="-40.64" y2="132.08" width="0.1524" layer="91"/>
 <wire x1="-40.64" y1="132.08" x2="-45.72" y2="132.08" width="0.1524" layer="91"/>
-<pinref part="U2" gate="G$1" pin="HB"/>
 <wire x1="-43.18" y1="127" x2="-40.64" y2="127" width="0.1524" layer="91"/>
 <junction x="-40.64" y="127"/>
-<pinref part="U2" gate="G$1" pin="B2"/>
 <wire x1="-45.72" y1="121.92" x2="-40.64" y2="121.92" width="0.1524" layer="91"/>
 <junction x="-40.64" y="121.92"/>
+<pinref part="U$1" gate="G$1" pin="HB"/>
+<pinref part="U$1" gate="G$1" pin="B1"/>
+<pinref part="U$1" gate="G$1" pin="B2"/>
 </segment>
 </net>
 <net name="1_N$3" class="0">
@@ -12476,22 +12489,22 @@ This is the standard Spark Fun Electronics PCB logo.</description>
 <wire x1="-81.28" y1="106.68" x2="-73.66" y2="106.68" width="0.1524" layer="91"/>
 <wire x1="-81.28" y1="106.68" x2="-81.28" y2="109.22" width="0.1524" layer="91"/>
 <junction x="-81.28" y="106.68"/>
-<pinref part="U2" gate="G$1" pin="HA"/>
 <wire x1="-81.28" y1="109.22" x2="-81.28" y2="127" width="0.1524" layer="91"/>
 <wire x1="-81.28" y1="127" x2="-73.66" y2="127" width="0.1524" layer="91"/>
 <pinref part="JP16" gate="G$1" pin="2"/>
 <wire x1="-88.9" y1="109.22" x2="-81.28" y2="109.22" width="0.1524" layer="91"/>
 <junction x="-81.28" y="109.22"/>
-<pinref part="1_R1" gate="G$1" pin="2"/>
+<pinref part="R8" gate="G$1" pin="2"/>
 <wire x1="-73.66" y1="109.22" x2="-73.66" y2="106.68" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="HA"/>
 </segment>
 </net>
 <net name="1_N$4" class="0">
 <segment>
-<pinref part="U2" gate="G$1" pin="A2"/>
 <wire x1="-71.12" y1="121.92" x2="-73.66" y2="121.92" width="0.1524" layer="91"/>
-<pinref part="1_R1" gate="G$1" pin="1"/>
+<pinref part="R8" gate="G$1" pin="1"/>
 <wire x1="-73.66" y1="121.92" x2="-73.66" y2="119.38" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="A2"/>
 </segment>
 </net>
 <net name="2_1_N$1" class="0">
@@ -12702,6 +12715,27 @@ This is the standard Spark Fun Electronics PCB logo.</description>
 </nets>
 </sheet>
 </sheets>
+<errors>
+<approved hash="113,1,-72.6652,114.3,1_R1,,,,,"/>
+<approved hash="113,1,-92.1173,106.485,JP16,,,,,"/>
+<approved hash="113,1,-225.865,181.017,JP9,,,,,"/>
+<approved hash="113,1,-233.68,171.175,R1,,,,,"/>
+<approved hash="113,1,-183.075,164.423,JP17,,,,,"/>
+<approved hash="113,1,-172.525,181.017,JP10,,,,,"/>
+<approved hash="113,1,-182.88,173.715,R2,,,,,"/>
+<approved hash="113,1,-134.815,164.423,JP18,,,,,"/>
+<approved hash="113,1,-124.265,181.017,JP11,,,,,"/>
+<approved hash="113,1,-134.62,173.715,R3,,,,,"/>
+<approved hash="113,1,-134.815,108.543,JP19,,,,,"/>
+<approved hash="113,1,-124.265,125.137,JP15,,,,,"/>
+<approved hash="113,1,-134.62,117.835,R6,,,,,"/>
+<approved hash="113,1,-175.065,125.137,JP14,,,,,"/>
+<approved hash="113,1,-182.88,117.835,R5,,,,,"/>
+<approved hash="113,1,-78.5453,181.017,JP12,,,,,"/>
+<approved hash="113,1,-88.9,171.175,R4,,,,,"/>
+<approved hash="113,1,-231.14,107.844,U1,,,,,"/>
+<approved hash="113,1,-223.325,125.137,JP13,,,,,"/>
+</errors>
 </schematic>
 </drawing>
 </eagle>
